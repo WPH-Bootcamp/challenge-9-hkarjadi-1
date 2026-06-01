@@ -59,13 +59,29 @@ function Home() {
                       {movieItem.overview}
                     </div>
                   </div>
-                  <div className='w-full flex flex-col justify-center items-center gap-4'>
+
+                  {/* <div className='w-full flex flex-col justify-center items-center gap-4'>
                     <Button className='w-full max-w-90 text-md z-20 hover:scale-105 transition-transform bg-primary-300'>
                       Watch Trailer
                     </Button>
                     <Button className='text-md z-20 hover:scale-105 transition-transform'>
                       See Detail
                     </Button>
+                  </div> */}
+
+                  <div className='w-full flex flex-col justify-center items-center gap-4'>
+                    <Button className='w-full max-w-90 text-md z-20 hover:scale-105 transition-transform bg-primary-300'>
+                      Watch Trailer
+                    </Button>
+
+                    <Link
+                      to={`/movie-detail-page/${movieItem.id}`}
+                      className='w-full flex justify-center'
+                    >
+                      <Button className='text-md z-20 hover:scale-105 transition-transform'>
+                        See Detail
+                      </Button>
+                    </Link>
                   </div>
                 </div>
               </div>

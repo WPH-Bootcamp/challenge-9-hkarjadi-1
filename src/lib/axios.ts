@@ -4,9 +4,18 @@ import axios from 'axios';
 // Hint: Use environment variables for API URL and API key
 // Reference: https://axios-http.com/docs/instance
 
-const api = axios.create({
+const TMDB_TOKEN = import.meta.env.VITE_TMDB_API_TOKEN;
+
+const tmdbapi = axios.create({
   // TODO: Configure baseURL from environment variable
   // TODO: Add default headers (API key, content-type)
+
+  baseURL: 'https://api.themoviedb.org/3',
+  timeout: 10000,
+  headers: {
+    'Content-Type': 'application/json',
+    Authorization: `Bearer ${TMDB_TOKEN}`,
+  },
 });
 
 // TODO: Add request interceptor if needed
@@ -14,4 +23,4 @@ const api = axios.create({
 
 // TODO: Add response interceptor for error handling
 
-export default api;
+export default tmdbapi;
